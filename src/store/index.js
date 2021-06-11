@@ -7,7 +7,7 @@ Vue.use(Vuex)
 export const store = new Vuex.Store({
   state: {
     photos: [],
-    name: 'FF',
+    name: 'ss',
   },
   getters: {
     allPhotos(state) {

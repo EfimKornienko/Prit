@@ -1,6 +1,7 @@
 <template>
   <div class="hello container">
     <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4">
+      {{ name }}
       <div v-for="photo in allPhotos" :key="photo.id" class="p-2">
         <img :src="photo.urls.thumb" />
         {{ photo.id }}
@@ -10,13 +11,16 @@
 </template>
 
 <script>
-import { mapGetters, mapActions } from 'vuex'
+import { mapState, mapGetters, mapActions } from 'vuex'
 export default {
   name: 'HelloWorld',
   data() {
     return {}
   },
-  computed: mapGetters(['allPhotos']),
+  computed: {
+    ...mapState(['name']),
+    ...mapGetters(['allPhotos']),
+  },
   methods: mapActions(['getPhoto']),
   mounted() {
     this.getPhoto()
