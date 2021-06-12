@@ -5,7 +5,7 @@
         <h3>Fima's</h3>
       </div>
       <div>
-        <router-link to="/Hello">Hello</router-link>
+        <router-link to="/All">All</router-link>
         <router-link to="/By">By</router-link>
       </div>
     </div>
