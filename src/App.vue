@@ -1,8 +1,8 @@
 <template>
-  <div id="app" class="container">
-    <div class=" d-flex justify-content-between">
+  <div id="app">
+    <div class=" d-flex justify-content-between container">
       <div>
-        <h3>Fima's</h3>
+        <h1>Fima's</h1>
       </div>
       <div>
         <router-link to="/All">All</router-link>
@@ -31,5 +31,8 @@ export default {
 a {
   margin-left: 5px;
   margin-right: 5px;
+  font-size: 25px;
+  color: black;
+  text-decoration: none;
 }
 </style>

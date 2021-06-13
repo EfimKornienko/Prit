@@ -1,20 +1,37 @@
 <template>
-  <div class="hello container">
-    <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4">
-      <div v-for="photo in slicePhotos" :key="photo.id" class="p-2">
-        <div>
-          <div v-for="post in filterPosts(photo)" :key="post.id" class="p-2">
-            <b-card
-              title="post.title"
-              img-src="photo.urls.thumb"
-              img-alt="Image"
-              img-top
-              tag="article"
-              style="max-width: 20rem;"
-              class="mb-2"
-            >
-              <b-card-text>
-                post.body
+  <div class="container p-5">
+    <div class="row d-flex justify-content-center">
+      <div class="col d-flex flex-column">
+        <div
+          v-for="card in allCards.slice(0, allCards.length / 2)"
+          :key="card.id"
+          class="p-2"
+        >
+          <div class="card-style d-flex justify-content-center ">
+            <b-card img-alt="Image" img-top tag="article" class="mb-2">
+              <div class="card-content">{{ card.post.title }}</div>
+              <b-img :src="card.photo.urls.small" class="card-content"></b-img>
+
+              <b-card-text class="card-content">
+                {{ card.photo.alt_description }}
+              </b-card-text>
+            </b-card>
+          </div>
+        </div>
+      </div>
+      <div class="col d-flex flex-column align-items-end ">
+        <div
+          v-for="card in allCards.slice(allCards.length / 2)"
+          :key="card.id"
+          class="p-2"
+        >
+          <div class="card-style d-flex justify-content-center">
+            <b-card img-alt="Image" img-top tag="article" class="mb-2">
+              <div class="card-content">{{ card.post.title }}</div>
+              <b-img :src="card.photo.urls.small" class="card-content"></b-img>
+
+              <b-card-text class="card-content">
+                {{ card.photo.alt_description }}
               </b-card-text>
             </b-card>
           </div>
@@ -34,49 +51,28 @@ export default {
     }
   },
   computed: {
-    // ...mapState(['name']),
-    ...mapGetters(['allPhotos', 'allPosts']),
-    slicePosts() {
-      return this.allPosts.slice(0, 10)
-    },
-    slicePhotos() {
-      let photos = this.allPhotos
-      for (var i = 0; i < photos.length - 1; i++) {
-        photos[i].idx = i + 1
-      }
-      console.log(photos)
-      return photos
-    },
-    filterPosts(photo) {
-      return this.slicePosts.filter((post) => post.userId === photo.idx)
-    },
+    ...mapGetters(['allCards']),
   },
   methods: {
-    ...mapActions(['getPhotos', 'getPosts']),
+    ...mapActions(['getPhotos', 'getPosts', 'getCards']),
   },
   mounted() {
     this.getPhotos()
     this.getPosts()
-    console.log(this.allPhotos)
-    console.log(this.allPosts)
+    console.log(this.$store.state.photos)
+    console.log(this.$store.state.posts)
+    this.getCards()
+    console.log(this.allCards)
   },
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h3 {
-  margin: 40px 0 0;
+.card-style {
+  border-radius: 2rem;
 }
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
+.card-content {
+  padding: 5px;
 }
 </style>

@@ -51,7 +51,7 @@ export const store = new Vuex.Store({
     },
     getCards(context) {
       let cards = []
-      for (var i = 0; this.state.photos.length - 1; i++) {
+      for (var i = 0; i < this.state.photos.length; i++) {
         cards.push({
           id: i + 1,
           post: this.state.posts[i],
