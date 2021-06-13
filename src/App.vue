@@ -25,14 +25,13 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
   margin-top: 60px;
 }
 a {
   margin-left: 5px;
   margin-right: 5px;
   font-size: 25px;
-  color: black;
+  color: black !important;
   text-decoration: none;
 }
 </style>
