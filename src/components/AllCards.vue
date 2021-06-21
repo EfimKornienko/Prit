@@ -1,10 +1,10 @@
 <template>
-  <div class="p-5">
+  <div class="p-3">
     <div class="row d-flex justify-content-center">
-      <div class="col-4 d-flex flex-column">
+      <div class="col-xl-3 col-lg-4 col-10 d-flex flex-column">
         <Photos :photos="allPhotos.slice(0, allPhotos.length / 3)" />
       </div>
-      <div class="col-4 d-flex flex-column">
+      <div class="col-xl-3 col-lg-4 col-10 d-flex flex-column">
         <Photos
           :photos="
             allPhotos.slice(
@@ -14,7 +14,7 @@
           "
         />
       </div>
-      <div class="col-4 d-flex flex-column">
+      <div class="col-xl-3 col-lg-4 col-10 d-flex flex-column">
         <Photos
           :photos="allPhotos.slice(allPhotos.length - allPhotos.length / 3)"
         />

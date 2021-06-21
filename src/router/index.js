@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import AllCards from '../components/AllCards'
 import Card from '../components/Card'
+import Welcome from '../components/Welcome'
 import By from '../components/By'
 
 Vue.use(Router)
@@ -22,6 +23,11 @@ export default new Router({
       name: 'Card',
       component: Card,
       props: true,
+    },
+    {
+      path: '/',
+      name: 'Welcome',
+      component: Welcome,
     },
   ],
 })

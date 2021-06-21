@@ -1,10 +1,13 @@
 <template>
   <div id="app">
-    <div class=" d-flex justify-content-between container">
+    <div
+      class="d-flex justify-content-between align-items-center container flex-wrap"
+    >
       <div>
         <h1>Fima's</h1>
       </div>
-      <div>
+      <div class="links">
+        <router-link to="/">Home</router-link>
         <router-link to="/All">All</router-link>
         <router-link to="/By">By</router-link>
       </div>
@@ -25,11 +28,15 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  margin-top: 60px;
+  padding-top: 35px;
 }
+/* html,
+#app {
+  background-color: #e6e6fa;
+} */
 a {
-  margin-left: 5px;
-  margin-right: 5px;
+  margin-left: 10px;
+  margin-right: px;
   font-size: 25px;
   color: black !important;
   text-decoration: none;
