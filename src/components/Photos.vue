@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="col-xl-3 col-lg-4 col-8 d-flex flex-column">
     <div v-for="photo in photos" :key="photo.id" class="photo">
       <router-link :to="{ name: 'Card', params: { card: photo } }"
         ><b-img :src="photo.urls.small" class="p-2"></b-img
@@ -26,7 +26,7 @@ export default {
 <style>
 @media screen and (max-width: 1650px) {
   .photo img {
-    width: 90%;
+    width: 100%;
   }
 }
 </style>

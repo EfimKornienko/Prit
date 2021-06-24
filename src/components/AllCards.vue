@@ -1,24 +1,9 @@
 <template>
   <div class="p-3">
     <div class="row d-flex justify-content-center">
-      <div class="col-xl-3 col-lg-4 col-10 d-flex flex-column">
-        <Photos :photos="allPhotos.slice(0, allPhotos.length / 3)" />
-      </div>
-      <div class="col-xl-3 col-lg-4 col-10 d-flex flex-column">
-        <Photos
-          :photos="
-            allPhotos.slice(
-              allPhotos.length / 3,
-              allPhotos.length - allPhotos.length / 3,
-            )
-          "
-        />
-      </div>
-      <div class="col-xl-3 col-lg-4 col-10 d-flex flex-column">
-        <Photos
-          :photos="allPhotos.slice(allPhotos.length - allPhotos.length / 3)"
-        />
-      </div>
+      <Photos :photos="FirstColumnPhotos" />
+      <Photos :photos="SecondColumnPhotos" />
+      <Photos :photos="ThirdColumnPhotos" />
     </div>
   </div>
 </template>
@@ -36,6 +21,20 @@ export default {
   },
   computed: {
     ...mapGetters(['allPhotos']),
+    FirstColumnPhotos() {
+      return this.allPhotos.slice(0, this.allPhotos.length / 3)
+    },
+    SecondColumnPhotos() {
+      return this.allPhotos.slice(
+        this.allPhotos.length / 3,
+        this.allPhotos.length - this.allPhotos.length / 3,
+      )
+    },
+    ThirdColumnPhotos() {
+      return this.allPhotos.slice(
+        this.allPhotos.length - this.allPhotos.length / 3,
+      )
+    },
   },
   methods: {
     ...mapActions(['getPhotos']),
