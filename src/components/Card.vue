@@ -19,11 +19,12 @@
           </div>
         </div>
       </div>
-      <div class="d-flex container">
-        <div v-for="photo in up" :key="photo.id" class="d-flex">
-          <div v-for="url in photo.preview_photos" :key="url.id">
-            <b-img :src="url.urls.thumb"></b-img>
-          </div>
+    </div>
+    <h2 v-if="up.length" class="pt-5">Photos from this User</h2>
+    <div class="d-flex justify-content-center row user-photos">
+      <div v-for="photo in up" :key="photo.id" class="d-flex flex-column">
+        <div v-for="url in photo.preview_photos" :key="url.id">
+          <b-img :src="url.urls.small"></b-img>
         </div>
       </div>
     </div>
@@ -75,7 +76,7 @@ button {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  min-height: 75vh;
+  min-height: 80vh;
   max-height: 100%;
 }
 .main-photo img {
@@ -84,5 +85,13 @@ button {
 .card-text {
   padding: 20px;
   max-width: 500px;
+}
+.row {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.user-photos img {
+  padding: 10px;
+  width: 100%;
 }
 </style>

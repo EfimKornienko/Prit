@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div
-      class="d-flex justify-content-between align-items-center container flex-wrap"
+      class="d-flex justify-content-between align-items-center container flex-wrap header"
     >
       <div>
         <h1>Fima's</h1>
@@ -28,7 +28,13 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  padding-top: 35px;
+}
+.header {
+  padding-top: 5vh;
+  height: 10vh;
+}
+img {
+  border-radius: 10%;
 }
 /* html,
 #app {
