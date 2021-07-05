@@ -4,12 +4,12 @@
       class="d-flex justify-content-between align-items-center container flex-wrap header"
     >
       <div>
-        <h1>Fima's</h1>
+        <h1>Pint-app</h1>
       </div>
       <div class="links">
         <router-link to="/">Home</router-link>
         <router-link to="/All">All</router-link>
-        <router-link to="/By">By</router-link>
+        <router-link to="/Liked">Liked</router-link>
       </div>
     </div>
     <router-view></router-view>
@@ -31,7 +31,6 @@ export default {
 }
 .header {
   padding-top: 5vh;
-  height: 10vh;
 }
 img {
   border-radius: 10%;
@@ -41,7 +40,7 @@ img {
   background-color: #e6e6fa;
 } */
 a {
-  margin-left: 10px;
+  margin-left: 10px !important;
   margin-right: px;
   font-size: 25px;
   color: black !important;

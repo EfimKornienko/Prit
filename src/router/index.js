@@ -3,7 +3,7 @@ import Router from 'vue-router'
 import AllCards from '../components/AllCards'
 import Card from '../components/Card'
 import Welcome from '../components/Welcome'
-import By from '../components/By'
+import Liked from '../components/Liked'
 
 Vue.use(Router)
 export default new Router({
@@ -14,9 +14,9 @@ export default new Router({
       component: AllCards,
     },
     {
-      path: '/By',
-      name: 'By',
-      component: By,
+      path: '/Liked',
+      name: 'Liked',
+      component: Liked,
     },
     {
       path: '/Card',

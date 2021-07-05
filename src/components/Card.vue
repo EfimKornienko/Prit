@@ -20,7 +20,7 @@
         </div>
       </div>
     </div>
-    <h2 v-if="up.length" class="pt-5">Photos from this User</h2>
+    <h2 v-if="up.length" class="pt-5">{{ card.user.name }} portfolio</h2>
     <div class="d-flex justify-content-center row user-photos">
       <div v-for="photo in up" :key="photo.id" class="d-flex flex-column">
         <div v-for="url in photo.preview_photos" :key="url.id">

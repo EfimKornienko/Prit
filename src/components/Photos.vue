@@ -1,5 +1,5 @@
 <template>
-  <div class="col-xl-3 col-lg-4 col-8 d-flex flex-column">
+  <div class="col-xl-3 col-lg-4 col-8 d-flex flex-column pt-5">
     <div v-for="photo in photos" :key="photo.id" class="photo">
       <router-link :to="{ name: 'Card', params: { card: photo } }"
         ><b-img :src="photo.urls.small" class="p-2"></b-img
